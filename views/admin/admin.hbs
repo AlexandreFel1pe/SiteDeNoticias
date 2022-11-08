@@ -1,0 +1,29 @@
+<title>Admin</title>
+<link rel='stylesheet' href='/css/teste.css' />
+<form action="/logout" method="post">
+							<button class="logout" type="submit">Sign out</button>
+							<input type="hidden" name="_csrf" value="<%= csrfToken %>">
+						</form>
+<h1>admin <a href="/publicar">Publicar</a></h1>
+
+<form action="/salvarnoticia" method="post">
+<p>Titulo</p>
+<input type="text" name="titulo">
+</br>
+</br>
+<p>Conteudo</p>
+<input type="text" name="conteudo">
+</br>
+</br>
+<p>Categoria</p>
+<input type="text" name="categoria">
+<button type="submit">Enviar</button>
+
+</form>
+
+{{#each Noticias}}
+<a class="titulo" href="/noticia/{{titulo}}"><h1>{{titulo}}</h1></a>
+<p class="conteudo">{{conteudo}}</p>
+<a class="categoria" href="/./{{categoria}}"><p>{{categoria}}</p></a>
+<a class="deleta" href="/delete/{{titulo}}"><p>Excluir</p></a>
+{{/each}}

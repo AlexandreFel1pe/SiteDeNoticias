@@ -1,0 +1,11 @@
+{{#each Noticias}}
+<title>{{categoria}}</title>
+{{/each}}
+<link rel='stylesheet' href='/css/teste.css' />
+{{#each Noticias}}
+<div class="categoria">
+<a class="titulo" href="/noticia/{{titulo}}"><h1>{{titulo}}</h1></a>
+<p>{{conteudo}}</p>
+<p>{{categoria}}</p>
+</div>
+{{/each}}
